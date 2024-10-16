@@ -1,48 +1,33 @@
 #include <iostream>
 using namespace std;
-int ReadpositiveNumber(string message)
+void ReadInfo(int &Num1,int &Num2)
 {
-  int PositiveNumber=0;
-  do{
-    cout<<message<<endl;
-    cin>>PositiveNumber;
-    
-  }while(PositiveNumber<=0);
-  return PositiveNumber;
+  cout<<"please enter Num1 and Num2?"<<endl;
+  cin>>Num1>>Num2;
 }
-void Print(int PositiveNumber)
+int CheckInfo(int Num1,int Num2)
 {
-  int Reminder,Counter0=0,Number1,Number2 ,Counter1=0,Number3,Counter2=0;
- cout<<"enter Number1?\n";
- cin>>Number1;
- cout<<"enter Number 2 ?\n";
- cin>>Number2;
- cout<<"enter Number 3 ?\n";
- cin>>Number3;
-  cout<<"**********\n";
-  while(PositiveNumber>0)
-  {
-    Reminder=PositiveNumber%10;
-    PositiveNumber=PositiveNumber/10;
-    
- if(Reminder==Number1)
- {
-  Counter0++;
- }else if (Reminder==Number2)
- {
-     Counter1++;
- }
- else {
-     Counter2++;
- }
-  }
-  cout<<"result of Number"<<Number1<<"= "<<Counter0<<endl;
-cout<<"result of Number"<<Number2<<"= "<<Counter1<<endl;
-cout<<"result of Number"<<Number3<<"= "<<Counter2<<endl;
-    
+  int result =1;
+for(int i =0;i<Num2;i++)
+{
+  result *=Num1;
 }
+return result;
+  
+  
+}
+void Print (int Num1, int Num2)
+{
+ cout<<"The Num1 you enter:"<<Num1<<endl;
+cout<<"The Num2 you enter is:"<<Num2<<endl;
+  
+}
+
 int main() 
 {
-
-  Print(ReadpositiveNumber("enter Positive Number\n"));
+  int Num1,Num2;
+  ReadInfo(Num1,Num2);
+  Print(Num1,Num2);
+  int reuslt=CheckInfo(Num1,Num2);
+  cout<<"the result is :"<<reuslt;
 }
